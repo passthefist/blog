@@ -1,5 +1,5 @@
 (function() {
-    this.Blog = function() {
+    this.Blog = function(ready) {
         var key = '8086d62266ceb885af4862ed5ff1387f5293c36d';
 
         var api = function(endpoint) {
@@ -11,9 +11,10 @@
         $.ajax('https://raw.githubusercontent.com/rdgoetz/blog/gh-pages/blog/templates/post.html', {
             crossDomain: true,
             mimeType:'text/plain'
-        }).done(function(response) {
+        }).done((function(response) {
             templates.post = response;
-        }).fail(function(){
+            ready.call(this,this);
+        }).bind(this)).fail(function(){
             console.log(arguments)
         });
 
@@ -47,11 +48,11 @@
                 }
 
                 posts.sort(function(a,b){
-                    if (a.timestamp > b.timestamp) {
+                    if (a.timestamp < b.timestamp) {
                         return 1;
                     }
 
-                    if (a.timestamp < b.timestamp) {
+                    if (a.timestamp > b.timestamp) {
                         return -1;
                     }
 

@@ -20,13 +20,28 @@
     </body>
     <script>
         $(function(){
-            var blog = new Blog();
-            var today = new Date();
-            var year = today.getFullYear();
+            new Blog(function(blog){
+                var today = new Date();
+                var year = today.getFullYear();
 
-            blog.posts(year,function(posts) {
-                posts.forEach(function(post) {
-                    blog.renderPostInto(post,$('.posts'));
+                blog.posts(year,function(posts) {
+                    var idx = -1;
+
+                    function renderNextPost() {
+                        idx++;
+                        var post = posts[idx];
+                        blog.renderPostInto(post,$('.posts'));
+                    }
+
+                    while($('.posts').height() < $(document).height()) {
+                        renderNextPost();
+                    }
+
+                    $(window).scroll(function() {
+                        if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+                            renderNextPost();
+                        }
+                    });
                 });
             });
         });
