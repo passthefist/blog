@@ -1,7 +1,33 @@
-<script src='js/engine.js'></script>
-<script>
-    var blog = new Blog();
-    blog.posts(2016,function(posts) {
-        console.log(posts);
-    });
-</script>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="css/simplegrid.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <title>Where is Rob Goetz?</title>
+        <script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+        <script src='js/marked.js'></script>
+        <script src='js/engine.js'></script>
+    </head>
+    <body id="body">
+        <div class="col-3-12">
+        </div>
+        <div class="posts col-6-12">
+        </div>
+        <div class="col-3-12">
+        </div>
+    </body>
+    <script>
+        $(function(){
+            var blog = new Blog();
+            var today = new Date();
+            var year = today.getFullYear();
+
+            blog.posts(year,function(posts) {
+                var current = posts[0];
+                blog.renderPostInto(current,$('.posts')),
+            });
+        });
+    </script>
+</html
