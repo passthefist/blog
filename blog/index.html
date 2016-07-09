@@ -25,8 +25,9 @@
             var year = today.getFullYear();
 
             blog.posts(year,function(posts) {
-                var current = posts[0];
-                blog.renderPostInto(current,$('.posts'));
+                posts.forEach(function(post) {
+                    blog.renderPostInto(post,$('.posts'));
+                });
             });
         });
     </script>
