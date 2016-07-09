@@ -36,7 +36,8 @@
                     var day = dates[1];
                     var title = meta[1];
 
-                    var timestamp = new Date(year,month,day);
+                    //apparently months are zero indexed
+                    var timestamp = new Date(year,month-1,day);
                     var dateFormat = { year: 'numeric', month:'long',  day: 'numeric'};
 
                     posts.push({
@@ -76,14 +77,14 @@
             });
         }
 
-        this.renderPostInto = function(post, $el) {
+        this.renderPost = function(post, callback) {
             this.postContent(post, function(content) {
                 $template = $(templates.post);
                 $template.find('[data-post-title]').html(post.title);
                 $template.find('[data-post-date]').html(post.date);
                 $template.find('[data-post-content]').html(content);
 
-                $el.append($template);
+                callback($template);
             });
         }
     }

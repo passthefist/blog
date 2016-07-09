@@ -29,13 +29,22 @@
 
                     function renderNextPost() {
                         idx++;
+                        if (idx >= posts.length) {
+                            return;
+                        }
+
                         var post = posts[idx];
-                        blog.renderPostInto(post,$('.posts'));
+
+                        blog.renderPost(post, function(content) {
+                            $('.posts').append(content);
+
+                            if ($('.posts').height() < $(window).height()) {
+                                renderNextPost();
+                            }
+                        });
                     }
 
-                    while($('.posts').height() < $(document).height()) {
-                        renderNextPost();
-                    }
+                    renderNextPost();
 
                     $(window).scroll(function() {
                         if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
