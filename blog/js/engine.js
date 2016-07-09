@@ -36,10 +36,12 @@
                     var title = meta[1];
 
                     var timestamp = new Date(year,month,day);
+                    var dateFormat = { year: 'numeric', month:'long',  day: 'numeric'};
 
                     posts.push({
                         file: year+'/'+name,
-                        date: timestamp.getTime(),
+                        timestamp: timestamp.getTime(),
+                        date: timestamp.toLocaleDateString('en-us',dateFormat),
                         title: title
                     });
                 }
