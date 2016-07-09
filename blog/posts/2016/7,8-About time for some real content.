@@ -1,0 +1,29 @@
+Looks like were getting closer to a real post now. Since I need content, I'm gonna do a quick overview of how my half-baked blog system works.
+
+The gist is that I can't be bothered to do anything more than write markdown files. Static site generators like Jekyll are nice, and not only
+match this problem and probably solve it better, but I've gone and built my own thing for a couple reasons.
+
+1. I don't want to have to run a script before uploading, I just wanna git push.
+2. I want to be able to add things from mobile
+3. I'd like to keep this low tech, so I can update posts from my terminal/vim with no fancy web UI.
+4. Building things are fun. Honestly, this is pretty much the biggest reason.
+
+This blog is static, similar to something Jekyll would make, but I've set this up to build the pages/posts per-request rather than per-publish.
+
+Posts exist as individual markdown files in the Github Pages repo for this project (there is no 'master', master is gh-pages). Upon visiting the
+root page, the browser hits the Github API for a listing of blog post files (just metadata, not content). From this metadata, which gets sorted
+in descending date order, the individual markdown files are requested, parsed, and then added to the document.
+
+Scrolling down just loads the next file in the metadata list.
+
+The hackiest part is that the handling of the post date and post title are in the filename. I was hoping to get a commit date for pusblish date,
+but couldn't find that in the api. The date is just a comma separated pair of month,day. The post title follows a - after that pair. The literal
+filename after that hyphen becomes the post's title.
+
+Though I'd like to improve it, there are a couple of things I like about this:
+* Posts are sorted by date in the filesystem
+* It's easy to navigate, since the titles are listed
+* Goes along with point 3. A database is probably better, but I can just use standard utilities as my blog interface.
+
+Hopefully I can find a way to read the file's date metadata instead of relying on title munging. I'll have to dig through the API ref and see
+what's there.

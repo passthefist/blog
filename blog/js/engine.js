@@ -32,8 +32,8 @@
                     var meta = post.name.split('-');
 
                     var dates = meta[0].split(',')
-                    var day = dates[0];
-                    var month = dates[1];
+                    var month = dates[0];
+                    var day = dates[1];
                     var title = meta[1];
 
                     var timestamp = new Date(year,month,day);
