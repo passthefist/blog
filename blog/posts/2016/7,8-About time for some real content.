@@ -1,7 +1,8 @@
 Looks like we're getting closer to a real post now. Since I need content, I'm gonna do a quick overview of how my half-baked blog system works.
 
 The gist is that I can't be bothered to do anything more than write markdown files. Static site generators like Jekyll are great, and not only
-match this problem and probably solve it better, but I've gone and built my own thing for a couple reasons.
+match this problem and probably solve it better, but I've gone and built my own thing for a couple reasons. The code is kinda
+sketchy, but not too shabby for about a day's work.
 
 1. I don't want to have to run a script before uploading, I just wanna git push.
 2. I want to be able to add things from mobile
