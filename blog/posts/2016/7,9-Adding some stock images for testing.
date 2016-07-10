@@ -6,8 +6,10 @@ but I'd like a simpler solution than that.
 I'm thinking maybe some more JS hackery, turing series of images one after another into a gallery of sorts. At any rate, I'm adding a
 couple stock photos so I'll have something to work with.
 
-![stock](http://l7.alamy.com/zooms/2eee9c6cb99c4cd3bb5d02c060d554ea/tram-in-street-of-lisbon-below-the-castle-of-st-jorge-to-see-67-more-ab7j8e.jpg)
-![stock](http://l7.alamy.com/zooms/513a1e088d9a45c2b913f24e132d94d2/trams-in-the-street-below-the-castle-of-st-jorge-city-of-lisbon-portugal-ab7j91.jpg)
+![stock](http://i1.wp.com/www.worldwanderista.com/wp-content/uploads/2014/11/Lisbon.jpg)
+![stock](http://cdn.images.cunard.com/webimage/HeroImage/Global/Images/Destinations/Lisbon19166.jpg)
+![stock](https://upload.wikimedia.org/wikipedia/commons/1/17/Tram_28,_Lisbon,_20051011.jpg)
+![stock](http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Portugal/Lisbon/Lisbon---Overview---Cityscape-large.jpg)
 
 While that's kinda unfortunate, I'm digging just writing these posts in Vim or Github's online file editor. My goal is to get some kind of
 solution figured out tomorrow. Lisbon is a beautiful city and having to use these stock photos is a bit sad.
