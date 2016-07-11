@@ -14,11 +14,15 @@ body {
 }
 
 .post .title {
+    padding-left: 12px;
+    border-left: 2px solid #468;
     font-weight:bold;
     font-size:1.8em;
 }
 
 .post .date {
+    padding-left: 12px;
+    border-left: 2px solid #468;
     font-style:bold;
     font-size:.7em;
     color:#666;
@@ -32,10 +36,42 @@ body {
 }
 .post img {
     box-shadow: 0px 0px 0px 3px #468;
-    display: block;
+    text-align:center;
     margin: 0px auto;
+    display:block;
     border-radius: 8px;
     background-color: #468;
+}
+
+.post .image-gallery {
+    border:2px solid #468;
+    border-radius:3px;
+
+    background-color:#ccc;
+
+    white-space:nowrap;
+
+    text-align:center;
+    vertical-align:middle;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    height:30vw;
+}
+
+@media (max-width : 768px) {
+    .post .image-gallery {
+        border-radius:none;
+        height:50vw;
+    }
+}
+
+.post .image-gallery img {
+    height:100%;
+    display:inline;
+    box-shadow:none;
+    border-radius:0px;
 }
 
 .post a {

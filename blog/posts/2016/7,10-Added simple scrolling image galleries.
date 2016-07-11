@@ -1,0 +1,38 @@
+The solution I've decided to go with is uses as much straght CSS as I could. Unfortunately, until the parent selector (!)
+is supported, I had to detect dom nodes with multiple image tags as children and apply a class via javascript.
+
+Everything else is CSS though, and easily degrades to mobile since it's just a scrollable gallery.
+
+![stock](http://i1.wp.com/www.worldwanderista.com/wp-content/uploads/2014/11/Lisbon.jpg)
+![stock](http://cdn.images.cunard.com/webimage/HeroImage/Global/Images/Destinations/Lisbon19166.jpg)
+![stock](https://upload.wikimedia.org/wikipedia/commons/1/17/Tram_28,_Lisbon,_20051011.jpg)
+![stock](http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Portugal/Lisbon/Lisbon---Overview---Cityscape-large.jpg)
+
+I considered using lightboxes and the like, but I like the feel of this. Though more cluttered, I think it has that old
+school photo album feel, and I like that.
+
+![stock](http://i1.wp.com/www.worldwanderista.com/wp-content/uploads/2014/11/Lisbon.jpg)
+![stock](http://cdn.images.cunard.com/webimage/HeroImage/Global/Images/Destinations/Lisbon19166.jpg)
+![stock](https://upload.wikimedia.org/wikipedia/commons/1/17/Tram_28,_Lisbon,_20051011.jpg)
+![stock](http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Portugal/Lisbon/Lisbon---Overview---Cityscape-large.jpg)
+![stock](http://i1.wp.com/www.worldwanderista.com/wp-content/uploads/2014/11/Lisbon.jpg)
+![stock](http://cdn.images.cunard.com/webimage/HeroImage/Global/Images/Destinations/Lisbon19166.jpg)
+![stock](https://upload.wikimedia.org/wikipedia/commons/1/17/Tram_28,_Lisbon,_20051011.jpg)
+![stock](http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Portugal/Lisbon/Lisbon---Overview---Cityscape-large.jpg)
+
+The height is restricted with viewport units (vw), so as the column shrinks the gallery height does so in proportion. On small screens,
+that proportion is increased to match the smaller column witdh.
+
+![stock](http://i1.wp.com/www.worldwanderista.com/wp-content/uploads/2014/11/Lisbon.jpg)
+![stock](http://cdn.images.cunard.com/webimage/HeroImage/Global/Images/Destinations/Lisbon19166.jpg)
+![stock](https://upload.wikimedia.org/wikipedia/commons/1/17/Tram_28,_Lisbon,_20051011.jpg)
+![stock](http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Portugal/Lisbon/Lisbon---Overview---Cityscape-large.jpg)
+
+This means for mobile, you can just scroll the gallery inline without transitioning to another screen or modal.
+
+I'm not sure it's clear that the gallery is scrollable, howver. I'm thinking about adding a slow scroll animation. On laptops, the
+scrollbar makes it clear, but on mobile there's no cue. I'm just kinda hoping that an offcenter image will be enough to naturally
+get a viewer to scroll.
+
+Also while laptops have multigesture and trackpads, desktops don't have the same thing. That makes this a terrible solution for
+desktop users. I know there's less of those now, but still something I'm going to have to sort out.

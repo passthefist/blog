@@ -79,10 +79,17 @@
 
         this.renderPost = function(post, callback) {
             this.postContent(post, function(content) {
-                $template = $(templates.post);
+                var $template = $(templates.post);
                 $template.find('[data-post-title]').html(post.title);
                 $template.find('[data-post-date]').html(post.date);
                 $template.find('[data-post-content]').html(content);
+
+                var images = $template.find('p > img ~ img');
+                images.each(function(idx, el) {
+                    var $el = $(el);
+                    var $parent = $el.parent();
+                    $parent.addClass('image-gallery');
+                });
 
                 callback($template);
             });
