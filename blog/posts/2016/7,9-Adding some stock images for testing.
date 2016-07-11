@@ -1,0 +1,15 @@
+So, if this blog is gonna be at least partially travel related, I'm gonna need a nice way of presenting pictures.
+
+However, I've kinda already backed myself into a corner with the decision to use markdown. Markdown does support arbitrary html,
+but I'd like a simpler solution than that.
+
+I'm thinking maybe some more JS hackery, turing series of images one after another into a gallery of sorts. At any rate, I'm adding a
+couple stock photos so I'll have something to work with.
+
+![stock](http://i1.wp.com/www.worldwanderista.com/wp-content/uploads/2014/11/Lisbon.jpg)
+![stock](http://cdn.images.cunard.com/webimage/HeroImage/Global/Images/Destinations/Lisbon19166.jpg)
+![stock](https://upload.wikimedia.org/wikipedia/commons/1/17/Tram_28,_Lisbon,_20051011.jpg)
+![stock](http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Portugal/Lisbon/Lisbon---Overview---Cityscape-large.jpg)
+
+While that's kinda unfortunate, I'm digging just writing these posts in Vim or Github's online file editor. My goal is to get some kind of
+solution figured out tomorrow. Lisbon is a beautiful city and having to use these stock photos is a bit sad.
