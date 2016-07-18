@@ -42,6 +42,7 @@
 
                     posts.push({
                         file: year+'/'+name,
+                        urlpath: year+'/'+encodeURIComponent(name),
                         timestamp: timestamp.getTime(),
                         date: timestamp.toLocaleDateString('en-us',dateFormat),
                         title: title
@@ -67,7 +68,7 @@
         }
 
         this.postContent = function(post,callback) {
-            $.ajax('https://raw.githubusercontent.com/rdgoetz/blog/gh-pages/blog/posts/'+post.file, {
+            $.ajax('https://raw.githubusercontent.com/rdgoetz/blog/gh-pages/blog/posts/'+post.urlpath, {
                 crossDomain: true,
                 mimeType:'text/plain'
             }).done(function(response) {
@@ -80,6 +81,7 @@
         this.renderPost = function(post, callback) {
             this.postContent(post, function(content) {
                 var $template = $(templates.post);
+                $template.attr('id',post.urlpath);
                 $template.find('[data-post-title]').html(post.title);
                 $template.find('[data-post-date]').html(post.date);
                 $template.find('[data-post-content]').html(content);

@@ -7,10 +7,17 @@ body {
 }
 
 .post {
-    margin:30px auto;
-    padding-bottom:30px;
     font-size:1.2em;
-    border-bottom:1px solid #fff;
+}
+
+.post:first-child {
+    margin:30px auto 10px auto;
+}
+
+.post:not(:first-child) {
+    border-top:1px solid #fff;
+    margin:30px auto 10px auto;
+    padding-top:30px;
 }
 
 .post .title {
@@ -28,12 +35,20 @@ body {
     color:#666;
 }
 
+
+.post.preview {
+    max-height:295px;
+    overflow:hidden;
+    text-overflow: clip;
+}
+
 .post pre {
     border:2px solid #468;
     border-radius:3px;
     padding:10px 5px;
     background-color:white;
 }
+
 .post img {
     box-shadow: 0px 0px 0px 3px #468;
     text-align:center;
@@ -43,6 +58,10 @@ body {
     background-color: #468;
 }
 
+.post.preview img,
+.post.preview .image-gallery {
+    display:none;
+}
 .post .image-gallery {
     border:2px solid #468;
     border-radius:3px;

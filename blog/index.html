@@ -37,8 +37,16 @@
 
                         blog.renderPost(post, function(content) {
                             $('.posts').append(content);
+                            if (content.html().length > 550) {
+                                content.addClass('preview');
+                                $('.posts').append('<div style="text-align:center;"><a data-continue-reading='+post.urlpath+' href="#!/posts/'+post.title+'">Continue reading</a></div>');
+                                $('.posts a[data-continue-reading="'+post.urlpath+'"]').on('click', function() {
+                                    var postContent = $(document.getElementById($(this).data('continue-reading')));
+                                    postContent.removeClass('preview');
+                                });
+                            }
 
-                            if ($('.posts').height() < $(window).height()) {
+                            if (idx < 4) {
                                 renderNextPost();
                             }
                         });
