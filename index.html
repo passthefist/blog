@@ -170,7 +170,7 @@
                 getLatLong(address, function(mapCenter) {
                     var place = new google.maps.LatLng(mapCenter.latitude, mapCenter.longitude);
                     var map = new google.maps.Map(document.getElementById('gmap_canvas'), {
-                        zoom:12,
+                        zoom:5,
                         center: place,
                         mapTypeId: google.maps.MapTypeId.ROADMAP
                     });
